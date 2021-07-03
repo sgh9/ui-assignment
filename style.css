@@ -65,7 +65,7 @@ body {
 
 
 .row {
-    padding: 1rem;
+    padding: 0.5rem;
 }
 
 
@@ -87,6 +87,7 @@ body {
 
 .form-control {
     width: 75%;
+    min-width: 250px;
     padding: 1rem;
 }
 
@@ -95,7 +96,7 @@ body {
     font-family: inherit;
     font-size: 0.75rem;
     font-weight: 600;
-    padding: 0.5rem 1rem;
+    padding:  1rem;
     border: 0;
     border-radius: 10px;
 }
@@ -105,8 +106,8 @@ body {
 }
 
 .upload-btn {
-    width: 10rem;
-    height:10rem;
+    width: 14rem;
+    height:14rem;
     padding: 3rem;
     background-color: #fff;
     border: 0;
