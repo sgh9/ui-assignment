@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+</head>
+<body>
+    <div class="container">
+        <div class="col-10">
+           <ul class="nav-items">
+               <li class="nav-item" >
+                   <a class="nav-item-link  d-flex flex-column justify-content-center align-items-center " id = "1" href="#">
+                       Home
+                   </a>
+                </li>
+               <li class="nav-item" >
+                   <a class="nav-item-link d-flex flex-column  justify-content-center align-items-center" id = "2" href="#">
+                        <i class="fal fa-user fa-2x" style="padding: 0.5rem 0;"></i><br><br>Students
+                    </a>
+                </li>
+
+               <li class="nav-item active-item" >
+                   <a class="nav-item-link d-flex flex-column justify-content-center align-items-center" id = "3" href="#">
+                      <i class="fal fa-book fa-2x" style="padding: 0.5rem 0;"></i><br><br>Lesson Plan
+                   </a>
+                </li>
+               <li class="nav-item" >
+                   <a class="nav-item-link d-flex flex-column justify-content-center align-items-center" id = "4" href="#">
+                         <i class="fal fa-cog fa-2x" style="padding: 0.5rem 0;"></i><br>Setting
+                   </a>
+                </li>
+           </ul>
+        </div>
+        <div class="col-90">
+           <div class="container flex-column">
+               <div class="top-row"></div>
+               <div class="row bottom-row">
+                   <div class="container flex-column">
+                       <div class="row row-category d-flex align-items-center">
+                             <i class="fas fa-caret-left fa-2x"></i>&nbsp;&nbsp; <span>videos</span>
+                       </div>
+                       <div class="row row-url d-flex  justify-content-center">
+                            <div class="form-control">
+                                <input type="text" name="link" id="link" placeholder="Insert URL here" class="form-input">
+                            </div>
+                       </div>
+                       <div class="row row-gap d-flex justify-content-center">
+                           <span>or</span>
+                       </div>
+                       <div class="row row-upload d-flex justify-content-center">
+                            <div class="form-control" >
+                                <button  class="upload-btn" >
+                                    upload
+                                </button>   
+                                <input type="file" name="upload-file" class="upload-file" id="" hidden>
+                            </div>
+                       </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+    <script >
+        let uploadBtn = document.querySelector(".upload-btn");
+        let uploadFile = document.querySelector(".upload-file");
+        let navItemLinks = document.querySelectorAll(".nav-item-link");
+
+        navItemLinks.forEach(( navItemLink, index )=> {
+            navItemLink.addEventListener("click", (e)=> {
+                e.stopPropagation();
+                let navItemLinkId = navItemLink.id;
+                setNavItem(navItemLinkId.toString());
+           })
+        });
+
+
+        const setNavItem = ( navItemLinkId )=> {
+            navItemLinks.forEach((navItemLink, index)=> {
+                if(navItemLinkId === navItemLink.id.toString()) {
+                     navItemLink.parentElement.classList.add("active-item");
+                } else {
+                     navItemLink.parentElement.classList.remove("active-item");
+                }
+            });
+        };
+
+        const setUploadBtnName  = ()=> {
+            if(uploadFile.files) {
+                uploadBtn.textContent = `${uploadFile.files[0].name}`;
+            }
+        }
+
+        uploadFile.addEventListener("change", ()=> {
+            if(uploadFile.files) {
+                uploadBtn.textContent = `${uploadFile.files[0].name}`;
+            }
+        });
+
+        uploadBtn.addEventListener("click", ()=> {
+            uploadFile.click();
+        });
+    </script>
+</body>
+</html>

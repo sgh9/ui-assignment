@@ -1,0 +1,169 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 62.5%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.container {
+    font-size: 1rem;
+    display:flex;
+}
+.nav-item {
+    border-left: 5px solid transparent;
+}
+
+.nav-item a:active {
+   background-color:rgba(99, 158, 226, 0.26);
+   width: 100%;
+}
+
+.nav-item:hover {
+    background-color:rgba(220, 228, 241, 0.363);
+ }
+ 
+ .nav-item.active-item {
+    background-color:rgba(169, 205, 247, 0.363);
+    border-left: 5px solid rgb(49, 102, 218);
+ }
+ 
+ .nav-item-link {
+    display: inline-block;
+    width: 100%;
+    height: 6rem;
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: #8F8F8F;
+
+ }
+
+ .nav-item.active-item .nav-item-link {
+    color: #111;
+ }
+
+ .nav-item:first-child {
+    box-shadow: 0 0 10px #828282;
+ }
+
+.col-10 {
+    width:10%;
+    position: relative;
+    z-index: 1000;
+    box-shadow: 2px 0 10px #828282;
+    text-align: center;
+    height:100vh;
+    background-color: #FAFAFA;
+}
+
+.col-90 {
+    width: 90%;
+}
+
+
+.row {
+    padding: 1rem;
+}
+
+
+
+.top-row {
+    padding: 3rem;
+}
+
+.bottom-row {
+    height: calc(100vh - 6rem);
+    background-color: #F0F0F0;
+}
+
+
+.row-category {
+    padding: 1.5rem ;
+    color: #8F8F8F;
+}
+
+.form-control {
+    width: 75%;
+    padding: 1rem;
+}
+
+.form-input {
+    width: 100%;
+    font-family: inherit;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border: 0;
+    border-radius: 10px;
+}
+
+.form-input:focus {
+    outline: 0;
+}
+
+.upload-btn {
+    width: 10rem;
+    height:10rem;
+    padding: 3rem;
+    background-color: #fff;
+    border: 0;
+}
+
+
+@media only screen and (max-width:760px) {
+    .col-10 {
+        width:15%;
+      
+    }
+    .col-90 {
+        width: 85%;
+    }
+    .bottom-row {
+        height: calc(100vh - 6rem);
+        background-color: #F0F0F0;
+    }
+}
+@media only screen and (max-width:540px) {
+    .col-10 {
+        width:20%;
+      
+    }
+    .col-90 {
+        width: 80%;
+    }
+    .bottom-row {
+        height: calc(100vh - 6rem);
+        background-color: #F0F0F0;
+    }
+
+}
+
+.d-flex {
+    display:flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.justify-content-center {
+    justify-content:center;
+}
+
+.align-items-center {
+    align-items:center;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration:none;
+    color:#3e3e3e;
+}
+
+
